@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using static System.Array;
 using static System.Char;
 
@@ -15,7 +15,9 @@ class MainClass
 
 
         Console.WriteLine("podaj ilość przesunięcie");
-        int przesuniecie = Convert.ToInt32(Console.ReadLine());
+
+
+        int przemieszczenie = Convert.ToInt32(Console.ReadLine());
 
 
 
@@ -28,7 +30,7 @@ class MainClass
         {
             char secretItem = secretMessage[i];
             int index = Array.IndexOf(alfabet, secretItem);
-            int letterPosition = (index += przesuniecie) % 26;
+            int letterPosition = (index += przemieszczenie) % 26;
             char encryptedCharacter = alfabet[letterPosition];
             zaszyfrowane[i] = encryptedCharacter;
         }
@@ -37,8 +39,9 @@ class MainClass
 
 
         string zakodowane = String.Join("", zaszyfrowane);
+
         Console.WriteLine("zaszyfrowane:");
-        Console.Write(zakodowane);
+        Console.Write(zaszyfrowane);
     }
 
 
